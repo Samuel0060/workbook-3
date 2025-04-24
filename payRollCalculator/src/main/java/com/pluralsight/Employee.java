@@ -3,10 +3,10 @@ package com.pluralsight;
 public class Employee {
     String employeeid;
     String name;
-    int hoursWorked;
+     double hoursWorked;
     float payRate;
 
-    public Employee(String employeeid, String name, int hoursWorked, float payRate) {
+    public Employee(String employeeid, String name, double hoursWorked, float payRate) {
         this.employeeid = employeeid;
         this.name = name;
         this.hoursWorked = hoursWorked;
@@ -29,11 +29,11 @@ public class Employee {
         this.name = name;
     }
 
-    public int getHoursWorked() {
+    public double getHoursWorked() {
         return hoursWorked;
     }
 
-    public void setHoursWorked(int hoursWorked) {
+    public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
@@ -45,9 +45,18 @@ public class Employee {
         this.payRate = payRate;
     }
 
-    public float getGrossPay(float grossPay){
+    public double getGrossPay(){
         return hoursWorked * payRate;
 
     }
+
+    @Override
+    public String toString() {
+        return "ID: " + employeeid + ", Name: " + name +
+                ", Hours Worked: " + hoursWorked +
+                ", Pay Rate: $" + payRate +
+                ", Gross Pay: $" + getGrossPay();
+    }
+
 
 }
